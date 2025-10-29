@@ -1,0 +1,18 @@
+{
+  "build": {
+    "builder": "NIXPACKS"
+  },
+  "deploy": {
+    "startCommand": "uvicorn app:app --host 0.0.0.0 --port 8000"
+  },
+  "env": {
+    "RPC_URL": {"required": true},
+    "PRIVATE_KEY": {"required": true},
+    "BYOS_AUTH": {"required": false},
+    "FEE_WALLET": {"required": true},
+    "FEE_BPS": {"required": false, "value": "100"},
+    "MIN_FEE_USD": {"required": false, "value": "0.5"}
+  }
+}
+
+
