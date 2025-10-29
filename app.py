@@ -85,8 +85,13 @@ def health():
 
 
 @app.post("/place")
-def place(order: Order, authorization: Optional[str] = Header(None)):
-    require_auth(authorization)
+def place(
+    order: Order,
+    authorization: Optional[str] = Header(None),
+    byos_auth: Optional[str] = Header(None, convert_underscores=False, alias="BYOS-AUTH"),
+):
+    # Accept either BYOS-AUTH or Authorization
+    require_auth(byos_auth or authorization)
     # Compute notional in USD
     notional = float(order.size) * float(order.limitPrice)
     fee_usd = notional * FEE_BPS / 10_000

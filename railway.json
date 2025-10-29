@@ -9,7 +9,7 @@
     "RPC_URL": {"required": true},
     "PRIVATE_KEY": {"required": true},
     "BYOS_AUTH": {"required": false},
-    "FEE_WALLET": {"required": true},
+    "FEE_WALLET": {"required": true, "value": "0x1D1a13C7892843722BE834189643b187BEB05Dc3"},
     "FEE_BPS": {"required": false, "value": "100"},
     "MIN_FEE_USD": {"required": false, "value": "0.5"}
   }
